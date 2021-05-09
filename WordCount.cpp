@@ -15,8 +15,6 @@ int main(int argc, char* argv[])
         }
 
         //对参数进行判断
-
-
         if (!strcmp(argv[1], "-c")) {//字符数
             char temp;
             int num = 0;
@@ -46,26 +44,9 @@ int main(int argc, char* argv[])
             printf("该文本文件的单词数为：%d\n", w);
 
         }
-        else if (!strcmp(argv[1], "-l")) {//行数
-            char temp;
-            int num = 1;
-            temp = fgetc(fp);
-            while (temp != EOF) {
-
-                //putchar(temp);
-                if (temp == '\n') {//字符需要用单引号扩住
-                    num++;
-                }
-                temp = fgetc(fp);
-
-
-            }
-            printf("该文本文件的行数为：%d\n", num);
-
-        }
         else {
             printf("错误：参数超出范围！\n");
-            printf("允许参数：-c，-w，-l\n");
+            printf("允许参数：-c，-w\n");
         }
         int n = fclose(fp);
     }
